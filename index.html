@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna Moda Feminina — Ariquemes, RO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --rose:    #f4c6c6;
+    --rose-d:  #e8a0a0;
+    --rose-dd: #c97a7a;
+    --blush:   #fdf0f0;
+    --cream:   #faf7f5;
+    --noir:    #1a1010;
+    --noir-s:  #3d2a2a;
+    --gold:    #c9a87c;
+    --white:   #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--noir);
+    overflow-x: hidden;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .font-display { font-family: 'Cormorant Garamond', serif; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(250,247,245,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(244,198,198,0.3);
+    transition: all .3s ease;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 500; letter-spacing: .08em;
+    color: var(--noir); text-decoration: none;
+  }
+  .nav-logo span { color: var(--rose-dd); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--noir-s); text-decoration: none; font-weight: 500;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--rose-dd); }
+  .nav-wa {
+    background: var(--noir); color: var(--white);
+    padding: .55rem 1.4rem; border-radius: 2rem;
+    font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none;
+    transition: background .2s, transform .2s;
+  }
+  .nav-wa:hover { background: var(--rose-dd); transform: scale(1.03); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .nav-hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--noir); border-radius: 2px; transition: all .3s;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-left {
+    display: flex; flex-direction: column;
+    justify-content: center; padding: 4rem 4rem 4rem 5rem;
+    position: relative; z-index: 2;
+  }
+  .hero-tag {
+    font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--rose-dd); font-weight: 500; margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .hero-tag::before {
+    content: ''; display: block; width: 2rem; height: 1px;
+    background: var(--rose-dd);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300; line-height: 1.05;
+    color: var(--noir); margin-bottom: .8rem;
+    letter-spacing: -.01em;
+  }
+  .hero-title em { font-style: italic; color: var(--rose-dd); }
+  .hero-sub {
+    font-size: 1rem; color: #7a6060; font-weight: 300;
+    line-height: 1.7; margin-bottom: 2.5rem; max-width: 380px;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--noir); color: var(--white);
+    padding: .9rem 2.2rem; border-radius: 3rem;
+    font-size: .82rem; letter-spacing: .1em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none; border: none; cursor: pointer;
+    transition: all .25s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--rose-dd); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,122,.3); }
+  .btn-secondary {
+    background: transparent; color: var(--noir);
+    padding: .9rem 2.2rem; border-radius: 3rem;
+    font-size: .82rem; letter-spacing: .1em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none; border: 2px solid var(--rose);
+    cursor: pointer; transition: all .25s; display: inline-flex; align-items: center; gap: .5rem;
+  }
+  .btn-secondary:hover { border-color: var(--rose-dd); background: var(--blush); transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3rem;
+    padding-top: 2rem; border-top: 1px solid rgba(244,198,198,.4);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 500; color: var(--noir);
+  }
+  .stat-lbl { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: #9a7a7a; margin-top: .1rem; }
+
+  .hero-right {
+    position: relative; overflow: hidden;
+    background: var(--blush);
+  }
+  .hero-img-main {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .8s ease;
+  }
+  .hero-right:hover .hero-img-main { transform: scale(1.03); }
+  .hero-badge {
+    position: absolute; bottom: 2.5rem; left: -1.5rem;
+    background: var(--white); border-radius: 1.2rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 12px 40px rgba(26,16,16,.12);
+    display: flex; align-items: center; gap: 1rem;
+    animation: floatBadge 4s ease-in-out infinite;
+  }
+  @keyframes floatBadge {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .badge-icon { font-size: 1.8rem; }
+  .badge-text-sm { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: #9a7a7a; }
+  .badge-text-lg { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; }
+
+  /* ── DIVIDER MARQUEE ── */
+  .marquee-wrap {
+    background: var(--noir); overflow: hidden; padding: .9rem 0; white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex; animation: marquee 18s linear infinite;
+  }
+  .marquee-track span {
+    font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(255,255,255,.7); padding: 0 2rem;
+  }
+  .marquee-track span.dot { color: var(--rose); font-size: .9rem; padding: 0 .5rem; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── SECTION HEADER ── */
+  .sec-header { text-align: center; margin-bottom: 3.5rem; }
+  .sec-tag {
+    font-size: .7rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--rose-dd); font-weight: 500; margin-bottom: .8rem;
+    display: flex; align-items: center; justify-content: center; gap: .7rem;
+  }
+  .sec-tag::before, .sec-tag::after {
+    content: ''; display: block; width: 2rem; height: 1px; background: var(--rose-dd);
+  }
+  .sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 300; color: var(--noir);
+    letter-spacing: -.01em; line-height: 1.15;
+  }
+  .sec-title em { font-style: italic; color: var(--rose-dd); }
+
+  /* ── CATALOG ── */
+  #catalogo { padding: 5rem 4rem; background: var(--cream); }
+  .catalog-filters {
+    display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .filter-btn {
+    padding: .5rem 1.4rem; border-radius: 2rem;
+    font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+    border: 1.5px solid var(--rose); background: transparent; color: var(--noir-s);
+    cursor: pointer; transition: all .2s; font-family: 'DM Sans', sans-serif;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--noir); color: var(--white); border-color: var(--noir);
+  }
+  .catalog-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    max-width: 1300px; margin: 0 auto;
+  }
+  .product-card {
+    background: var(--white); border-radius: 1.2rem;
+    overflow: hidden; transition: all .3s ease;
+    border: 1px solid rgba(244,198,198,.25);
+  }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,16,16,.1); }
+  .card-img-wrap {
+    position: relative; overflow: hidden;
+    aspect-ratio: 3/4; background: var(--blush);
+  }
+  .card-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .6s ease;
+  }
+  .product-card:hover .card-img-wrap img { transform: scale(1.06); }
+  .card-badge-new {
+    position: absolute; top: .9rem; left: .9rem;
+    background: var(--rose-dd); color: var(--white);
+    font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
+    padding: .28rem .8rem; border-radius: 2rem; font-weight: 500;
+  }
+  .card-badge-sale {
+    position: absolute; top: .9rem; left: .9rem;
+    background: var(--noir); color: var(--white);
+    font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
+    padding: .28rem .8rem; border-radius: 2rem; font-weight: 500;
+  }
+  .card-wish {
+    position: absolute; top: .9rem; right: .9rem;
+    background: var(--white); border: none; border-radius: 50%;
+    width: 2.2rem; height: 2.2rem; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1rem; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+  .card-wish:hover { background: var(--rose); transform: scale(1.1); }
+  .card-body { padding: 1.2rem; }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 500; color: var(--noir);
+    margin-bottom: .3rem;
+  }
+  .card-cat { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: #9a7a7a; margin-bottom: .8rem; }
+  .card-sizes { display: flex; gap: .4rem; margin-bottom: 1rem; }
+  .size-tag {
+    width: 2rem; height: 2rem; border-radius: .4rem;
+    border: 1.5px solid var(--rose); display: flex; align-items: center; justify-content: center;
+    font-size: .68rem; font-weight: 500; color: var(--noir-s); cursor: pointer;
+    transition: all .15s;
+  }
+  .size-tag:hover, .size-tag.selected { background: var(--noir); color: var(--white); border-color: var(--noir); }
+  .card-price-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+  .card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 500; color: var(--noir);
+  }
+  .card-price-old { font-size: .82rem; color: #bbb; text-decoration: line-through; margin-left: .4rem; }
+  .btn-wa-card {
+    width: 100%; background: #25D366; color: var(--white);
+    border: none; border-radius: .7rem; padding: .75rem;
+    font-size: .75rem; letter-spacing: .08em; text-transform: uppercase;
+    font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: .5rem;
+    transition: all .2s; font-family: 'DM Sans', sans-serif;
+  }
+  .btn-wa-card:hover { background: #1ebe5a; transform: scale(1.02); }
+
+  /* ── NOVIDADES ── */
+  #novidades { padding: 5rem 4rem; background: var(--blush); }
+  .novidades-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.2rem; max-width: 1300px; margin: 0 auto;
+    height: 600px;
+  }
+  .nov-card {
+    border-radius: 1.2rem; overflow: hidden;
+    position: relative; cursor: pointer;
+  }
+  .nov-card:first-child { grid-row: 1 / 3; }
+  .nov-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .nov-card:hover img { transform: scale(1.05); }
+  .nov-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,16,16,.65) 0%, transparent 50%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 1.5rem; opacity: 0; transition: opacity .3s;
+  }
+  .nov-card:hover .nov-overlay { opacity: 1; }
+  .nov-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1.5rem 1.2rem;
+    background: linear-gradient(to top, rgba(26,16,16,.75) 0%, transparent 100%);
+  }
+  .nov-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 400; color: var(--white);
+  }
+  .nov-price { font-size: .85rem; color: var(--rose); margin-top: .2rem; font-weight: 500; }
+  .nov-tag-badge {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--rose); color: var(--noir);
+    font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
+    padding: .3rem .8rem; border-radius: 2rem; font-weight: 600;
+  }
+
+  /* ── INSTAGRAM ── */
+  #instagram { padding: 5rem 4rem; background: var(--cream); }
+  .insta-header { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+  .insta-handle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: var(--noir);
+  }
+  .insta-handle span { color: var(--rose-dd); }
+  .insta-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: .7rem;
+    max-width: 1200px; margin: 0 auto 2rem;
+  }
+  .insta-post {
+    aspect-ratio: 1; border-radius: .7rem; overflow: hidden; position: relative; cursor: pointer;
+  }
+  .insta-post img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .insta-post:hover img { transform: scale(1.06); }
+  .insta-hover {
+    position: absolute; inset: 0; background: rgba(201,122,122,.5);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity .3s; color: white; font-size: 1.2rem;
+  }
+  .insta-post:hover .insta-hover { opacity: 1; }
+  .insta-cta { text-align: center; }
+
+  /* ── SOBRE ── */
+  #sobre {
+    padding: 5rem 4rem;
+    background: var(--noir);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    align-items: center;
+    position: relative; overflow: hidden;
+  }
+  #sobre::before {
+    content: 'LUNA'; position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18rem; font-weight: 600; color: rgba(244,198,198,.04);
+    top: -2rem; left: -2rem; pointer-events: none; white-space: nowrap;
+  }
+  .sobre-img {
+    border-radius: 1.5rem; overflow: hidden;
+    aspect-ratio: 4/5; position: relative;
+  }
+  .sobre-img img { width: 100%; height: 100%; object-fit: cover; }
+  .sobre-img::after {
+    content: ''; position: absolute;
+    inset: 1rem; border: 1px solid rgba(244,198,198,.2); border-radius: 1rem;
+    pointer-events: none;
+  }
+  .sobre-content { position: relative; z-index: 2; }
+  .sobre-tag {
+    font-size: .7rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--rose); font-weight: 500; margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: .7rem;
+  }
+  .sobre-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); }
+  .sobre-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 300;
+    color: var(--white); line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .sobre-title em { font-style: italic; color: var(--rose); }
+  .sobre-text { color: rgba(255,255,255,.65); line-height: 1.9; font-size: .92rem; margin-bottom: 2rem; font-weight: 300; }
+  .sobre-features { display: flex; flex-direction: column; gap: .9rem; margin-bottom: 2.5rem; }
+  .feat-item { display: flex; align-items: center; gap: 1rem; }
+  .feat-icon {
+    width: 2.4rem; height: 2.4rem; border-radius: 50%;
+    background: rgba(244,198,198,.1); border: 1px solid rgba(244,198,198,.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .95rem; flex-shrink: 0;
+  }
+  .feat-text { font-size: .85rem; color: rgba(255,255,255,.75); line-height: 1.5; }
+  .feat-text strong { color: var(--white); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0f0808; padding: 3rem 4rem 1.5rem;
+    border-top: 1px solid rgba(244,198,198,.1);
+  }
+  .footer-inner {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+    margin-bottom: 2.5rem; max-width: 1300px; margin-left: auto; margin-right: auto;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 400; color: var(--white); margin-bottom: 1rem;
+  }
+  .footer-logo span { color: var(--rose); }
+  .footer-desc { color: rgba(255,255,255,.45); font-size: .85rem; line-height: 1.8; max-width: 280px; }
+  .footer-heading {
+    font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--rose); font-weight: 500; margin-bottom: 1.2rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+  .footer-links a { color: rgba(255,255,255,.5); font-size: .85rem; text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--rose); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.06); padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .75rem; color: rgba(255,255,255,.3); max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* ── FLOATING WA ── */
+  .wa-float {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    display: flex; flex-direction: column; align-items: flex-end; gap: .8rem;
+  }
+  .wa-tooltip {
+    background: var(--white); color: var(--noir);
+    padding: .6rem 1.1rem; border-radius: .6rem;
+    font-size: .82rem; font-weight: 500; white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    opacity: 0; transform: translateX(8px);
+    transition: all .3s; pointer-events: none;
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+  .wa-btn {
+    width: 3.8rem; height: 3.8rem; border-radius: 50%;
+    background: #25D366; display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 1.7rem;
+    box-shadow: 0 4px 20px rgba(37,211,102,.4);
+    transition: transform .2s, box-shadow .2s;
+    animation: waPulse 3s ease-in-out infinite;
+  }
+  .wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,.5); }
+  @keyframes waPulse {
+    0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 0 rgba(37,211,102,.3); }
+    50%  { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 14px rgba(37,211,102,.0); }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .fade-delay-1 { transition-delay: .1s; }
+  .fade-delay-2 { transition-delay: .2s; }
+  .fade-delay-3 { transition-delay: .3s; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 1024px) {
+    .catalog-grid { grid-template-columns: repeat(3, 1fr); }
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { height: 55vw; }
+    .hero-left { padding: 3rem 2rem; }
+    .novidades-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: auto; }
+    .nov-card:first-child { grid-column: 1 / 3; grid-row: auto; height: 300px; }
+    #sobre { grid-template-columns: 1fr; gap: 2rem; }
+    .sobre-img { max-height: 380px; }
+    .insta-grid { grid-template-columns: repeat(4, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    nav { padding: 1rem 1.5rem; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-wa { display: none; }
+    .catalog-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    #catalogo, #novidades, #instagram, #sobre { padding: 3.5rem 1.2rem; }
+    .novidades-grid { grid-template-columns: 1fr; height: auto; }
+    .nov-card:first-child { grid-column: auto; height: 260px; }
+    .nov-card { height: 220px; }
+    .insta-grid { grid-template-columns: repeat(3, 1fr); }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+    .hero-stats { gap: 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    .hero-title { font-size: 2.8rem; }
+    .catalog-grid { grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+    .card-body { padding: .9rem; }
+    .insta-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Luna<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#catalogo">Coleção</a></li>
+    <li><a href="#novidades">Novidades</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+  </ul>
+  <a href="https://wa.me/5569999999999?text=Olá%2C%20vim%20pelo%20site%20da%20Luna%20Moda%21" target="_blank" class="nav-wa">WhatsApp</a>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag fade-in">Nova Coleção 2025</div>
+    <h1 class="hero-title fade-in fade-delay-1">
+      Luna<br><em>Moda</em><br>Feminina
+    </h1>
+    <p class="hero-sub fade-in fade-delay-2">
+      Estilo e elegância para todas as ocasiões. Peças selecionadas com amor para a mulher moderna de Ariquemes.
+    </p>
+    <div class="hero-btns fade-in fade-delay-3">
+      <a href="#catalogo" class="btn-primary">Ver Coleção</a>
+      <a href="https://wa.me/5569999999999?text=Olá%2C%20vim%20pelo%20site%20da%20Luna%20Moda%20e%20gostaria%20de%20ver%20as%20peças%21" target="_blank" class="btn-secondary">
+        <span>💬</span> Comprar pelo WhatsApp
+      </a>
+    </div>
+    <div class="hero-stats fade-in">
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-lbl">Clientes felizes</div>
+      </div>
+      <div>
+        <div class="stat-num">120+</div>
+        <div class="stat-lbl">Peças em estoque</div>
+      </div>
+      <div>
+        <div class="stat-num">4.9★</div>
+        <div class="stat-lbl">Avaliação média</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img-main" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80" alt="Luna Moda Feminina">
+    <div class="hero-badge">
+      <div class="badge-icon">🌸</div>
+      <div>
+        <div class="badge-text-sm">Tendência</div>
+        <div class="badge-text-lg">Primavera 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══ -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Nova Coleção</span><span class="dot">✦</span>
+    <span>Vestidos</span><span class="dot">✦</span>
+    <span>Blusas</span><span class="dot">✦</span>
+    <span>Calças</span><span class="dot">✦</span>
+    <span>Conjuntos</span><span class="dot">✦</span>
+    <span>Ariquemes RO</span><span class="dot">✦</span>
+    <span>Entrega na Cidade</span><span class="dot">✦</span>
+    <span>Moda Feminina</span><span class="dot">✦</span>
+    <span>Nova Coleção</span><span class="dot">✦</span>
+    <span>Vestidos</span><span class="dot">✦</span>
+    <span>Blusas</span><span class="dot">✦</span>
+    <span>Calças</span><span class="dot">✦</span>
+    <span>Conjuntos</span><span class="dot">✦</span>
+    <span>Ariquemes RO</span><span class="dot">✦</span>
+    <span>Entrega na Cidade</span><span class="dot">✦</span>
+    <span>Moda Feminina</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ══ CATÁLOGO ══ -->
+<section id="catalogo">
+  <div class="sec-header fade-in">
+    <div class="sec-tag">Nosso Acervo</div>
+    <h2 class="sec-title">Coleção <em>Atual</em></h2>
+  </div>
+  <div class="catalog-filters fade-in">
+    <button class="filter-btn active" onclick="filterCat(this,'todos')">Todos</button>
+    <button class="filter-btn" onclick="filterCat(this,'vestido')">Vestidos</button>
+    <button class="filter-btn" onclick="filterCat(this,'blusa')">Blusas</button>
+    <button class="filter-btn" onclick="filterCat(this,'calca')">Calças</button>
+    <button class="filter-btn" onclick="filterCat(this,'conjunto')">Conjuntos</button>
+  </div>
+  <div class="catalog-grid" id="catalogGrid">
+
+    <!-- CARD 1 -->
+    <div class="product-card fade-in" data-cat="vestido">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80" alt="Vestido Floral">
+        <span class="card-badge-new">Novo</span>
+        <button class="card-wish" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Vestido</div>
+        <div class="card-name">Vestido Floral Encanto</div>
+        <div class="card-sizes">
+          <span class="size-tag" onclick="selectSize(this)">P</span>
+          <span class="size-tag" onclick="selectSize(this)">M</span>
+          <span class="size-tag" onclick="selectSize(this)">G</span>
+        </div>
+        <div class="card-price-row">
+          <div><span class="card-price">R$ 189</span><span class="card-price-old">R$ 240</span></div>
+        </div>
+        <button class="btn-wa-card" onclick="buyWA('Vestido Floral Encanto','R$ 189')">
+          <span>💬</span> Comprar no WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card fade-in fade-delay-1" data-cat="blusa">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=400&q=80" alt="Blusa Romântica">
+        <button class="card-wish" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Blusa</div>
+        <div class="card-name">Blusa Romântica Rose</div>
+        <div class="card-sizes">
+          <span class="size-tag">P</span>
+          <span class="size-tag">M</span>
+          <span class="size-tag">G</span>
+        </div>
+        <div class="card-price-row">
+          <span class="card-price">R$ 89</span>
+        </div>
+        <button class="btn-wa-card" onclick="buyWA('Blusa Romântica Rose','R$ 89')">
+          <span>💬</span> Comprar no WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card fade-in fade-delay-2" data-cat="calca">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4dce?w=400&q=80" alt="Calça Palazzo">
+        <span class="card-badge-sale">Sale</span>
+        <button class="card-wish" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Calça</div>
+        <div class="card-name">Calça Palazzo Elegance</div>
+        <div class="card-sizes">
+          <span class="size-tag">P</span>
+          <span class="size-tag">M</span>
+          <span class="size-tag">G</span>
+        </div>
+        <div class="card-price-row">
+          <div><span class="card-price">R$ 129</span><span class="card-price-old">R$ 159</span></div>
+        </div>
+        <button class="btn-wa-card" onclick="buyWA('Calça Palazzo Elegance','R$ 129')">
+          <span>💬</span> Comprar no WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card fade-in fade-delay-3" data-cat="conjunto">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&q=80" alt="Conjunto Chic">
+        <span class="card-badge-new">Novo</span>
+        <button class="card-wish" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Conjunto</div>
+        <div class="card-name">Conjunto Chic Verão</div>
+        <div class="card-sizes">
+          <span class="size-tag">P</span>
+          <span class="size-tag">M</span>
+          <span class="size-tag">G</span>
+        </div>
+        <div class="card-price-row">
+          <span class="card-price">R$ 229</span>
+        </div>
+        <button class="btn-wa-card" onclick="buyWA('Conjunto Chic Verão','R$ 229')">
+          <span>💬</span> Comprar no WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card fade-in" data-cat="vestido">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=80" alt="Vestido Midi">
+        <span class="card-badge-new">Novo</span>
+        <button class="card-wish" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Vestido</div>
+        <div class="card-name">Vestido Midi Sofisticada</div>
+        <div class="card-sizes">
+          <span class="size-tag">P</span>
+          <span class="size-tag">M</span>
+          <span class="size-tag">G</span>
+        </div>
+        <div class="card-price-row">
+          <span class="card-price">R$ 269</span>
+        </div>
+        <button class="btn-wa-card" onclick="buyWA('Vestido Midi Sofisticada','R$ 269')">
+          <span>💬</span> Comprar no WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card fade-in fade-delay-1" data-cat="blusa">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=400&q=80" alt="Blusa Leve">
+        <button class="card-wish" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Blusa</div>
+        <div class="card-name">Blusa Leve Primavera</div>
+        <div class="card-sizes">
+          <span class="size-tag">P</span>
+          <span class="size-tag">M</span>
+          <span class="size-tag">G</span>
+        </div>
+        <div class="card-price-row">
+          <div><span class="card-price">R$ 79</span><span class="card-price-old">R$ 99</span></div>
+        </div>
+        <button class="btn-wa-card" onclick="buyWA('Blusa Leve Primavera','R$ 79')">
+          <span>💬</span> Comprar no WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card fade-in fade-delay-2" data-cat="calca">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80" alt="Saia Midi">
+        <button class="card-wish" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Saia</div>
+        <div class="card-name">Saia Midi Delicada</div>
+        <div class="card-sizes">
+          <span class="size-tag">P</span>
+          <span class="size-tag">M</span>
+          <span class="size-tag">G</span>
+        </div>
+        <div class="card-price-row">
+          <span class="card-price">R$ 119</span>
+        </div>
+        <button class="btn-wa-card" onclick="buyWA('Saia Midi Delicada','R$ 119')">
+          <span>💬</span> Comprar no WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card fade-in fade-delay-3" data-cat="conjunto">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&q=80" alt="Conjunto Casual">
+        <span class="card-badge-sale">Sale</span>
+        <button class="card-wish" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Conjunto</div>
+        <div class="card-name">Conjunto Casual Elegante</div>
+        <div class="card-sizes">
+          <span class="size-tag">P</span>
+          <span class="size-tag">M</span>
+          <span class="size-tag">G</span>
+        </div>
+        <div class="card-price-row">
+          <div><span class="card-price">R$ 199</span><span class="card-price-old">R$ 249</span></div>
+        </div>
+        <button class="btn-wa-card" onclick="buyWA('Conjunto Casual Elegante','R$ 199')">
+          <span>💬</span> Comprar no WhatsApp
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ NOVIDADES ══ -->
+<section id="novidades">
+  <div class="sec-header fade-in">
+    <div class="sec-tag">Em Destaque</div>
+    <h2 class="sec-title">Novidades da <em>Semana</em></h2>
+  </div>
+  <div class="novidades-grid fade-in">
+
+    <div class="nov-card">
+      <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=700&q=80" alt="Destaque">
+      <span class="nov-tag-badge">🌟 Mais Vendido</span>
+      <div class="nov-label">
+        <div class="nov-name">Vestido de Verão Luminosa</div>
+        <div class="nov-price">R$ 219 · P / M / G</div>
+      </div>
+      <div class="nov-overlay">
+        <button class="btn-wa-card" onclick="buyWA('Vestido de Verão Luminosa','R$ 219')" style="max-width:220px">💬 Comprar agora</button>
+      </div>
+    </div>
+
+    <div class="nov-card">
+      <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=400&q=80" alt="Novidade">
+      <span class="nov-tag-badge">Novo</span>
+      <div class="nov-label">
+        <div class="nov-name">Blusa Off-Shoulder</div>
+        <div class="nov-price">R$ 99</div>
+      </div>
+      <div class="nov-overlay">
+        <button class="btn-wa-card" onclick="buyWA('Blusa Off-Shoulder','R$ 99')" style="max-width:200px">💬 Comprar</button>
+      </div>
+    </div>
+
+    <div class="nov-card">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80" alt="Novidade">
+      <div class="nov-label">
+        <div class="nov-name">Conjunto Linen</div>
+        <div class="nov-price">R$ 289</div>
+      </div>
+      <div class="nov-overlay">
+        <button class="btn-wa-card" onclick="buyWA('Conjunto Linen','R$ 289')" style="max-width:200px">💬 Comprar</button>
+      </div>
+    </div>
+
+    <div class="nov-card">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&q=80" alt="Novidade">
+      <span class="nov-tag-badge">Sale</span>
+      <div class="nov-label">
+        <div class="nov-name">Calça Clochard</div>
+        <div class="nov-price">R$ 149 <s style="opacity:.5;font-size:.8em">R$189</s></div>
+      </div>
+      <div class="nov-overlay">
+        <button class="btn-wa-card" onclick="buyWA('Calça Clochard','R$ 149')" style="max-width:200px">💬 Comprar</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ INSTAGRAM ══ -->
+<section id="instagram">
+  <div class="sec-header fade-in">
+    <div class="sec-tag">Redes Sociais</div>
+    <div class="insta-header">
+      <span style="font-size:1.6rem">📸</span>
+      <div class="insta-handle"><span>@</span>lunamodafeminina</div>
+    </div>
+    <p style="color:#9a7a7a;font-size:.88rem;max-width:400px;margin:0 auto">Siga para ver as novidades em primeira mão</p>
+  </div>
+  <div class="insta-grid fade-in">
+    <div class="insta-post"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&q=80" alt=""><div class="insta-hover">❤️</div></div>
+    <div class="insta-post"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=300&q=80" alt=""><div class="insta-hover">❤️</div></div>
+    <div class="insta-post"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&q=80" alt=""><div class="insta-hover">❤️</div></div>
+    <div class="insta-post"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&q=80" alt=""><div class="insta-hover">❤️</div></div>
+    <div class="insta-post"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=300&q=80" alt=""><div class="insta-hover">❤️</div></div>
+    <div class="insta-post"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&q=80" alt=""><div class="insta-hover">❤️</div></div>
+  </div>
+  <div class="insta-cta fade-in">
+    <a href="https://instagram.com/lunamodafeminina" target="_blank" class="btn-secondary" style="display:inline-flex;gap:.5rem">
+      <span>📸</span> Seguir no Instagram
+    </a>
+  </div>
+</section>
+
+<!-- ══ SOBRE ══ -->
+<section id="sobre">
+  <div class="sobre-img fade-in">
+    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80" alt="Luna Moda">
+  </div>
+  <div class="sobre-content fade-in fade-delay-1">
+    <div class="sobre-tag">Nossa História</div>
+    <h2 class="sobre-title">Feita para a mulher <em>real</em> de Ariquemes</h2>
+    <p class="sobre-text">
+      A Luna Moda Feminina nasceu do desejo de trazer moda de qualidade para Ariquemes. Acreditamos que toda mulher merece se sentir bonita, confiante e elegante — sem precisar sair da cidade.
+    </p>
+    <p class="sobre-text">
+      Cada peça é selecionada com cuidado para combinar estilo, conforto e preço justo. Do casual ao sofisticado, temos o look perfeito para cada momento da sua vida.
+    </p>
+    <div class="sobre-features">
+      <div class="feat-item">
+        <div class="feat-icon">🚚</div>
+        <div class="feat-text"><strong>Entrega em Ariquemes</strong><br>Levamos até você</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">💬</div>
+        <div class="feat-text"><strong>Atendimento pelo WhatsApp</strong><br>Resposta rápida, 7 dias por semana</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">🔄</div>
+        <div class="feat-text"><strong>Troca sem complicação</strong><br>Ficou diferente? A gente resolve</div>
+      </div>
+    </div>
+    <a href="https://wa.me/5569999999999?text=Olá%2C%20vim%20pelo%20site%20da%20Luna%20Moda%20e%20quero%20conhecer%20mais%21" target="_blank" class="btn-primary">Fale Conosco</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Luna<span>.</span></div>
+      <p class="footer-desc">Moda feminina elegante em Ariquemes - RO. Peças selecionadas para a mulher moderna que valoriza estilo e qualidade.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Navegação</div>
+      <ul class="footer-links">
+        <li><a href="#catalogo">Coleção</a></li>
+        <li><a href="#novidades">Novidades</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contato</div>
+      <ul class="footer-links">
+        <li><a href="#">📍 Ariquemes, RO</a></li>
+        <li><a href="https://wa.me/5569999999999" target="_blank">💬 WhatsApp</a></li>
+        <li><a href="https://instagram.com/lunamodafeminina" target="_blank">📸 Instagram</a></li>
+        <li><a href="#">✉️ contato@lunamoda.com.br</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Luna Moda Feminina — Ariquemes, RO</span>
+    <span>Site criado por Lorran · Desenvolvedor Web</span>
+  </div>
+</footer>
+
+<!-- ══ FLOATING WA ══ -->
+<div class="wa-float">
+  <div class="wa-tooltip">💬 Atendimento pelo WhatsApp</div>
+  <a href="https://wa.me/5569999999999?text=Olá%2C%20vim%20pelo%20site%20da%20Luna%20Moda%20Feminina%21" target="_blank" class="wa-btn">💬</a>
+</div>
+
+<script>
+  // ── WhatsApp buy ──
+  function buyWA(produto, preco) {
+    const msg = encodeURIComponent(`Olá, vim pelo site da Luna Moda e tenho interesse nessa peça:\n\n*${produto}* — ${preco}\n\nPoderia me dar mais informações?`);
+    window.open(`https://wa.me/5569999999999?text=${msg}`, '_blank');
+  }
+
+  // ── Wishlist heart ──
+  function toggleWish(btn) {
+    btn.textContent = btn.textContent === '🤍' ? '❤️' : '🤍';
+    btn.style.background = btn.textContent === '❤️' ? 'var(--rose)' : 'var(--white)';
+  }
+
+  // ── Size select ──
+  function selectSize(el) {
+    const siblings = el.parentElement.querySelectorAll('.size-tag');
+    siblings.forEach(s => s.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  // ── Catalog filter ──
+  function filterCat(btn, cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+      const show = cat === 'todos' || card.dataset.cat === cat;
+      card.style.display = show ? 'block' : 'none';
+    });
+  }
+
+  // ── Scroll animations ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Navbar scroll shadow ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow =
+      window.scrollY > 20 ? '0 4px 30px rgba(26,16,16,.08)' : 'none';
+  });
+
+  // ── Mobile menu ──
+  let menuOpen = false;
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    const links = document.querySelector('.nav-links');
+    if (menuOpen) {
+      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--cream);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(244,198,198,.3);z-index:99;box-shadow:0 8px 30px rgba(26,16,16,.08)';
+    } else {
+      links.style.display = 'none';
+    }
+  }
+</script>
+</body>
+</html>
